@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AFH Conversion Planner
 
-## Getting Started
+A Next.js app that helps **providers, investors, and real estate agents** create practical, realistic **Adult Family Home (AFH) conversion plans** for a given property or MLS number. It guides you through property context, city/county permitting, goals, and your experience level—then prepares a structured “plan snapshot” ready for an AI agent cluster (Popebot-style) to produce conversion plans, drawings, permit strategies, and WABO/inspection roadmaps.
 
-First, run the development server:
+## What it does
+
+- **4-step wizard**: Property/MLS → City & county → Goals & timelines → Your role & AFH knowledge
+- **Role-aware**: Tailors language and focus for **AFH providers**, **investors**, or **real estate agents**
+- **Agent cluster panel**: Simulates a CTO, UX, Dev, and Compliance “team” that would use your inputs to draft plans (ready to wire to real agents via webhooks or GitHub)
+- **Plan snapshot**: One-page summary of everything you entered—ideal to hand off to consultants, permit expeditors, or automation
+
+## Quick start
 
 ```bash
+cd afh-planner
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The **home page** is a landing page with a left sidebar (scrollable nav to all sections) and a **GitHub** link on the bottom right. The **planner wizard** is at [/planner](http://localhost:3000/planner). To point the GitHub button to your repo, set `NEXT_PUBLIC_GITHUB_REPO_URL` (e.g. `https://github.com/your-org/afh-planner`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Full setup**: See [QUICKSTART.md](docs/QUICKSTART.md)  
+- **User manual**: [docs/MANUAL.md](docs/MANUAL.md)  
+- **Step-by-step tutorial**: [docs/TUTORIAL.md](docs/TUTORIAL.md)  
+- **Marketing copy**: [docs/ads/](docs/ads/) — Facebook, Instagram, Threads, Blogger, Naver Blog, Tistory, WordPress, newsletter, email
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech stack
 
-## Learn More
+- **Next.js 16** (App Router)
+- **React 19**, **TypeScript**, **Tailwind CSS**
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Command       | Description              |
+|--------------|--------------------------|
+| `npm run dev`  | Start dev server (port 3000) |
+| `npm run build`| Production build         |
+| `npm run start`| Start production server  |
+| `npm run lint` | Run ESLint               |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Inspiration
 
-## Deploy on Vercel
+Workflow and “cluster” concept are inspired by [Popebot](https://youtube.com/watch?v=Kqk_i1rkWgg)—using AI agents (CTO, UX, Developer, Compliance) that collaborate via shared context. This app collects that context so you can later plug it into GitHub labels, webhooks, or file-based triggers.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Private / use as you like.
